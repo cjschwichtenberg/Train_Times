@@ -1,0 +1,107 @@
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Train Time Tracker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <!-- Train Scheduler -->
+    <div class="container"></div>
+
+    <div class="row">
+
+        <div class="col sl2 m12 l12 xl12">
+
+            <!-- Active Trains -->
+            <div class="card card-primary">
+                <div class="card-heading">
+                    <h3 class="card-title text-center"><strong>Train Schedule</strong></h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover" id='train-table'>
+                        <thead>
+                            <tr>
+                                <th>Train Name</th>
+                                <th>Destination</th>
+                                <th>Frequncy(min)</th>
+                                <th>Next Arrival</th>
+                                <th>Minutes Away</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!-- Add Train  -->
+            <div class="card card-primary">
+                <div class="card-heading">
+                    <h3 class="card-title text-center"><strong>Add New Train</strong></h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <i class="col s12 m6 l6 xl6 material-icons prefix"> train 
+                                  <input type="text" name autocomplete="train-name" class="form-control" id="train-name-input" placeholder="Train Name">
+                                </i>
+                            <i class="col s12 m6 l6 xl6 material-icons prefix">location_on
+                                    <input type="text" name autocomplete="destination" class="form-control" id="destination-input" placeholder="Destination">
+                                </i>
+                        </div>
+                        <div class="row">
+                            <i class="col s12 m6 l6 xl6 material-icons prefix">watch_later
+                                    <input type="text" name autocomplete="time" class="form-control" id="first-time-input" placeholder="First Train Time (HH:mm-military time)">
+                                </i>
+
+                            <i class="col s12 m6 l6 xl6 material-icons prefix">timelapse
+                                    <input type="text" name autocomplete="frequency" class="form-control" id="frequency-input" placeholder="Frequency(min)">
+                                </i>
+                        </div>
+                        <button class="btn btn-primary" id="add-train" type="submit">New Train</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
